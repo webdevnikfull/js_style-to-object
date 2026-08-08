@@ -9,7 +9,7 @@ function convertToObject(sourceString) {
   const styles = {};
   const declarations = sourceString.split(';');
 
-  for (const declaration of declarations) {
+  declarations.forEach((declaration) => {
     const colorIndex = declaration.indexOf(':');
 
     if (colorIndex !== -1) {
@@ -20,7 +20,7 @@ function convertToObject(sourceString) {
         styles[key] = value;
       }
     }
-  }
+  });
 
   return styles;
 }
